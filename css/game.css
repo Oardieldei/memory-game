@@ -1,0 +1,11 @@
+.main {
+	padding: 40px;
+	border: 1px solid black;
+}
+
+.game__wrapper {
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+	gap: 40px;
+}
