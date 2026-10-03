@@ -36,6 +36,7 @@ function createCounters() {
 	const createTimeCounter = document.createElement('span')
 	createTimeCounter.classList.add('counter__time')
 	createTimeCounter.classList.add('counter')
+	createTimeCounter.textContent = '00:00'
 	countersWrapper.append(createTimeCounter)
 
 	return countersWrapper

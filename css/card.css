@@ -2,6 +2,7 @@
 	width: 100px;
 	height: 100px;
 	perspective: 1000px;
+	user-select: none;
 }
 
 .card__inner {

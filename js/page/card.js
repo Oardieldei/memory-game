@@ -1,4 +1,4 @@
-import { rotateCard } from "../game/rotateCard.js"
+import { showCard } from "../game/rotateCard.js"
 
 export function createCard() {
 	const newCard = document.createElement('div')
@@ -20,7 +20,7 @@ export function createCard() {
 	cardInner.append(cardFront)
 
 	newCard.addEventListener('click', () => {
-		rotateCard(newCard)
+		showCard(newCard)
 	})
 
 	return newCard
