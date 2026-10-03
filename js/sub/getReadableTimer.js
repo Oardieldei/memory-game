@@ -4,7 +4,7 @@ export function formatTime(time) {
 	const seconds = time % 60
 
 	const pad = (num) => {
-		String(num).padStart(2, '0')
+		return String(num).padStart(2, '0')
 	}
 
 	if (minutes < 1) {

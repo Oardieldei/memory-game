@@ -1,4 +1,4 @@
-import { showCard } from "../game/rotateCard.js"
+import { clickCard } from "../game/checkCards.js"
 
 export function createCard() {
 	const newCard = document.createElement('div')
@@ -20,7 +20,7 @@ export function createCard() {
 	cardInner.append(cardFront)
 
 	newCard.addEventListener('click', () => {
-		showCard(newCard)
+		clickCard(newCard)
 	})
 
 	return newCard

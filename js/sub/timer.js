@@ -1,9 +1,10 @@
-const counterTime = document.querySelector('.counter__time')
+import { formatTime } from "./getReadableTimer.js"
 
 let timerId = null
 let startTime = null
 
 export function startTimer() {
+	const counterTime = document.querySelector('.counter__time')
 	if (timerId !== null) return
 
 	startTime = Date.now()
@@ -20,6 +21,7 @@ export function stopTimer() {
 }
 
 export function resetTimer() {
+	const counterTime = document.querySelector('.counter__time')
 	stopTimer()
 
 	startTime = null

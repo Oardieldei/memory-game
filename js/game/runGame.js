@@ -1,9 +1,16 @@
+import { startTimer } from "../sub/timer.js"
+
 let isGameStarted = false
 
 export function clearGame() {
 	isGameStarted = false
 }
 
-function runTimer() {
+export function runTheGame() {
+	if (isGameStarted) return
+
+	isGameStarted = true
+	startTimer()
 	
 }
+
