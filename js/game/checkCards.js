@@ -1,6 +1,7 @@
 import { runTheGame } from "./runGame.js"
 import { showCard } from "./rotateCard.js"
 import { stopTimer } from "../sub/timer.js"
+import { addGame } from "../sub/saving.js"
 
 export function clickCard(card) {
 	if (card.classList.contains('card__flipped')) return
@@ -19,7 +20,8 @@ export function clickCard(card) {
 
 function addMove() {
 	const movesItem = document.querySelector('.counter__move')
-	let moves = +movesItem.textContent.slice(6)
+	const movesItemArary = movesItem.textContent.split(' ')
+	let moves = +movesItemArary[1]
 	moves++
 	movesItem.textContent = `Ходы: ${moves}`
 }
@@ -48,5 +50,13 @@ function checkWin() {
 
 	if (flippedCards.length === 16) {
 		stopTimer()
+		const movesItem = document.querySelector('.counter__move')
+		const movesItemArary = movesItem.textContent.split(' ')
+		const moves = +movesItemArary[1]
+
+		const counterTime = document.querySelector('.counter__time')
+		const time = counterTime.textContent
+
+		addGame(moves, time)
 	}
 }
