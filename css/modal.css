@@ -1,0 +1,112 @@
+.modal__wrapper {
+	position: fixed;
+	inset: 0;
+	z-index: 10;
+	display: none;
+	justify-content: center;
+	align-items: center;
+	padding: 24px;
+	background-color: rgba(15, 23, 42, 0.55);
+	backdrop-filter: blur(4px);
+}
+
+.modal__wrapper.modal__opened {
+	display: flex;
+}
+
+.modal__window {
+	width: 100%;
+	max-width: 420px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 16px;
+	background-color: var(--color-surface);
+	border-radius: var(--radius-lg);
+	padding: 32px;
+	box-shadow: var(--shadow-lg);
+	text-align: center;
+}
+
+.results__header,
+.scores__header {
+	font-size: 24px;
+	font-weight: 700;
+}
+
+.results__all {
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+	width: 100%;
+}
+
+.result__item,
+.scores__empty {
+	font-size: 16px;
+	color: var(--color-text-muted);
+}
+
+.scores__table {
+	width: 100%;
+	border-collapse: collapse;
+	font-size: 15px;
+}
+
+.scores__table th,
+.scores__table td {
+	padding: 10px 12px;
+	text-align: center;
+	border-bottom: 1px solid var(--color-border);
+}
+
+.scores__table thead th {
+	background-color: #f1f5f9;
+	color: var(--color-text-muted);
+	font-weight: 600;
+}
+
+.scores__table tbody tr:last-child td {
+	border-bottom: none;
+}
+
+.modal__results_btn {
+	padding: 12px 24px;
+	border-radius: var(--radius-pill);
+	font-size: 15px;
+	font-weight: 600;
+	user-select: none;
+	transition: transform var(--transition), box-shadow var(--transition),
+		background-color var(--transition), color var(--transition);
+}
+
+.modal__results_btn__newgame {
+	background-color: var(--color-primary);
+	color: #fff;
+	box-shadow: var(--shadow-md);
+}
+
+.modal__results_btn__close {
+	background-color: #f1f5f9;
+	color: var(--color-text);
+}
+
+@media (pointer: fine) and (hover: hover) {
+	.modal__results_btn {
+		cursor: pointer;
+	}
+
+	.modal__results_btn__newgame:hover {
+		background-color: var(--color-primary-dark);
+		transform: scale(1.05);
+	}
+
+	.modal__results_btn__close:hover {
+		background-color: #e2e8f0;
+		transform: scale(1.05);
+	}
+
+	.modal__results_btn:active {
+		transform: scale(0.97);
+	}
+}

@@ -1,0 +1,17 @@
+.counters__wrapper {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	gap: 12px;
+	padding-top: 20px;
+}
+
+.counter {
+	display: inline-flex;
+	align-items: center;
+	padding: 10px 16px;
+	border-radius: var(--radius-pill);
+	background-color: #f1f5f9;
+	font-size: 15px;
+	font-weight: 600;
+}
