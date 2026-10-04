@@ -5,6 +5,7 @@ let startTime = null
 
 export function startTimer() {
 	const counterTime = document.querySelector('.counter__time')
+	if (!counterTime) return
 	if (timerId !== null) return
 
 	startTime = Date.now()
@@ -25,5 +26,7 @@ export function resetTimer() {
 	stopTimer()
 
 	startTime = null
-	counterTime.textContent = '00:00'
+	if (counterTime) {
+		counterTime.textContent = '00:00'
+	}
 }

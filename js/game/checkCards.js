@@ -2,6 +2,7 @@ import { runTheGame } from "./runGame.js"
 import { showCard } from "./rotateCard.js"
 import { stopTimer } from "../sub/timer.js"
 import { addGame } from "../sub/saving.js"
+import { schedule } from "../sub/pendingTimeouts.js"
 
 export function clickCard(card) {
 	if (card.classList.contains('card__flipped')) return
@@ -34,10 +35,10 @@ function checkPair() {
 		shownCards[1].classList.remove('shown')
 		checkWin()
 	} else {
-		setTimeout(() => {
+		schedule(() => {
 			shownCards[0].classList.remove('card__flipped')
 			shownCards[1].classList.remove('card__flipped')
-			setTimeout(() => {
+			schedule(() => {
 				shownCards[0].classList.remove('shown')
 				shownCards[1].classList.remove('shown')
 			}, 500)

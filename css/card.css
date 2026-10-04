@@ -1,8 +1,13 @@
+.game__wrapper {
+  position: relative;
+}
+
 .card {
 	width: 100px;
 	height: 100px;
 	perspective: 1000px;
 	user-select: none;
+	transition: transform 0.4s ease;
 }
 
 .card__inner {
@@ -29,6 +34,25 @@
 
 .card__front {
 	transform: rotateY(180deg);
+}
+
+.card.shuffle-stack {
+  transform:
+    translate(var(--shuffle-x), var(--shuffle-y))
+    rotate(var(--shuffle-rotate));
+}
+
+.card.shuffle-move {
+  transform:
+    translate(
+      calc(var(--shuffle-x) + var(--shuffle-offset-x)),
+      calc(var(--shuffle-y) + var(--shuffle-offset-y))
+    )
+    rotate(var(--shuffle-move-rotate));
+}
+
+.game__wrapper.shuffling {
+	pointer-events: none;
 }
 
 @media (pointer: fine) and (hover: hover) {

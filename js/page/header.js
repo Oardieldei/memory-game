@@ -1,3 +1,5 @@
+import { startNewGame } from "../game/runGame.js"
+
 export function createHeader() {
 	const headerItem = document.createElement('header')
 	headerItem.classList.add('header')
@@ -13,6 +15,7 @@ function createNewGameBtn() {
 	newGameBtn.classList.add('header__btn_newgame')
 	newGameBtn.classList.add('header__btn')
 	newGameBtn.textContent = 'Новая игра'
+	newGameBtn.addEventListener('click', startNewGame)
 
 	return newGameBtn
 }
