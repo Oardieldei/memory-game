@@ -3,6 +3,7 @@ import { showCard } from "./rotateCard.js"
 import { stopTimer } from "../sub/timer.js"
 import { addGame } from "../sub/saving.js"
 import { schedule } from "../sub/pendingTimeouts.js"
+import { showResults } from "../modal/createModal.js"
 
 export function clickCard(card) {
 	if (card.classList.contains('card__flipped')) return
@@ -59,5 +60,6 @@ function checkWin() {
 		const time = counterTime.textContent
 
 		addGame(moves, time)
+		showResults()
 	}
 }

@@ -1,4 +1,5 @@
 import { startNewGame } from "../game/runGame.js"
+import { showScores } from "../modal/createModal.js"
 
 export function createHeader() {
 	const headerItem = document.createElement('header')
@@ -25,6 +26,7 @@ function createScoresBtn() {
 	scoresBtn.classList.add('header__btn_scores')
 	scoresBtn.classList.add('header__btn')
 	scoresBtn.textContent = 'Таблица лидеров'
+	scoresBtn.addEventListener('click', showScores)
 
 	return scoresBtn
 }

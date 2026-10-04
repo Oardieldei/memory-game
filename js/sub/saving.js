@@ -22,7 +22,7 @@ export function loadResults() {
 	return []
 }
 
-function createGameData(moves, time) {
+export function createGameData(moves, time) {
 	const date = new Date().toLocaleDateString('ru-RU')
 
 	if (time.length < 6) {

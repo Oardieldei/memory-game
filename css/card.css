@@ -1,10 +1,6 @@
-.game__wrapper {
-  position: relative;
-}
-
 .card {
-	width: 100px;
-	height: 100px;
+	width: 100%;
+	aspect-ratio: 1 / 1;
 	perspective: 1000px;
 	user-select: none;
 	transition: transform 0.4s ease;
@@ -29,11 +25,20 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	font-size: 64px;
+	font-size: clamp(1.75rem, 5vw, 2.5rem);
+	border-radius: var(--radius-md);
+	box-shadow: var(--shadow-sm);
+}
+
+.card__back {
+	background: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark));
+	color: #fff;
 }
 
 .card__front {
 	transform: rotateY(180deg);
+	background-color: #ffffff;
+	border: 1px solid var(--color-border);
 }
 
 .card.shuffle-stack {
@@ -58,5 +63,9 @@
 @media (pointer: fine) and (hover: hover) {
 	.card {
 		cursor: pointer;
+	}
+
+	.card:hover {
+		transform: rotate(-3deg) scale(1.05);
 	}
 }

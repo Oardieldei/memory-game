@@ -1,11 +1,13 @@
 .main {
-	padding: 40px;
-	border: 1px solid black;
+	background-color: var(--color-surface);
+	border-radius: var(--radius-lg);
+	box-shadow: var(--shadow-md);
+	padding: 24px;
 }
 
 .game__wrapper {
-	display: flex;
-	justify-content: center;
-	flex-wrap: wrap;
-	gap: 40px;
+	position: relative;
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	gap: 12px;
 }
